@@ -1,0 +1,7 @@
+{
+  "name": "dateMeNow",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
