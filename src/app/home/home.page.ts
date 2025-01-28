@@ -7,7 +7,14 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class HomePage {
+  showLoginDiv = false;
 
-  constructor() {}
+  constructor() { }
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.showLoginDiv = true;
+    }, 1000);
+  }
 
 }

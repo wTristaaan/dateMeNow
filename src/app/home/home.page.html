@@ -1,20 +1,20 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="login-page">
+  <div class="logo-container" [ngClass]="{'slideUpLogo': showLoginDiv}">
+    <img src="assets/logo/logo.png" alt="DateMe - Now Logo" class="logo" [ngClass]="{'logoSize': showLoginDiv}" />
+  </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div *ngIf="showLoginDiv" class="login-div">
+    <div class="col-login"  align="center">
+      <p class="subtitle sublogin">Inscription / Connexion</p>
+      <div class="divider" [ngClass]="{'dividerAnimate': showLoginDiv}"></div>
+      <button class="icon-button marginMaxTop">
+        <ion-icon name="person-outline" class="icon"></ion-icon>
+        <span class="text">E-mail/Téléphone</span>
+      </button>
+      <button class="icon-button marginMinTop">
+        <img src="assets/logo/google.png" alt="Logo de google" class="icon" />
+        <span class="text">Continuer avec Google</span>
+      </button>
+    </div>
   </div>
 </ion-content>
