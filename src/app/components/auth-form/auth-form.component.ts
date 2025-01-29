@@ -28,7 +28,7 @@ export class AuthFormComponent  implements OnInit {
 
   async presentToast(position: 'top' | 'middle' | 'bottom') {
     const toast = await this.toastController.create({
-      message: 'Connexion avec google en cours de développement',
+      message: 'Connexion avec google en cours de développement.',
       duration: 1500,
       position: position,
     });

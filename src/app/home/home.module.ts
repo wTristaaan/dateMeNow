@@ -9,6 +9,8 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { AuthFormComponent } from '../components/auth-form/auth-form.component';
 import { CreateAccountComponent } from '../components/create-account/create-account.component';
 import { IndexComponent } from '../components/index/index.component';
+import { DatesListComponent } from '../components/dates-list/dates-list.component';
+import { CardListComponent } from '../components/card-list/card-list.component';
 
 @NgModule({
   imports: [
@@ -21,7 +23,9 @@ import { IndexComponent } from '../components/index/index.component';
     HomePage, 
     AuthFormComponent, 
     CreateAccountComponent,
-    IndexComponent
+    IndexComponent,
+    DatesListComponent,
+    CardListComponent
   ]
 })
 export class HomePageModule {}

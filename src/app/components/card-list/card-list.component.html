@@ -1,0 +1,13 @@
+<div [ngClass]="{'card': true, 'locked': isLocked, 'unlocked': !isLocked}" (click)="onCard($event)">
+  <div *ngIf="isLocked" class="lock-icon">
+    <ion-icon name="lock-closed"></ion-icon>
+  </div>
+  <div *ngIf="!isLocked" class="dateImgContainer">
+    <img class="dateImg" src="{{ img }}" alt="Date photo">
+  </div>
+  <div class="textContainer">
+    <p class="dateText">{{  dateWith }}</p>
+  </div>
+  <ng-content></ng-content>
+</div>
+

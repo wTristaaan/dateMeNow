@@ -40,7 +40,7 @@ export class CreateAccountComponent  implements OnInit {
 
     if (!phoneRegex.test(this.phoneNumber)) {
       input.style.borderColor = 'red';
-      await this.presentToast('bottom', "Votre vérifier votre numéro");
+      await this.presentToast('bottom', "Votre vérifier votre numéro.");
     } else {
       input.style.borderColor = '';
       this.onCreateAccount(this.phoneNumber, "phone")
@@ -52,7 +52,7 @@ export class CreateAccountComponent  implements OnInit {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(this.email)) {
       input.style.borderColor = 'red';
-      await this.presentToast('bottom', "Votre vérifier votre email");
+      await this.presentToast('bottom', "Votre vérifier votre email.");
     }else {
       input.style.borderColor = '';
       this.onCreateAccount(this.email, "email")

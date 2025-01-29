@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { DateService } from 'src/app/services/dates.service';
 import { NoDatesComponent } from '../no-dates/no-dates.component';
 import { DatesListComponent } from '../dates-list/dates-list.component';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-index',
@@ -18,7 +19,8 @@ export class IndexComponent  implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private dateService: DateService
+    private dateService: DateService,
+    private toastController: ToastController
   ) {}
 
   logout() {
@@ -32,6 +34,7 @@ export class IndexComponent  implements OnInit {
         this.hasDates = this.dates.length > 0;
         if(this.hasDates)
         {
+          this.dateService.sendDates(this.dates)
           this.dynamicComponent = DatesListComponent
         }else{
           this.dynamicComponent = NoDatesComponent
@@ -43,10 +46,25 @@ export class IndexComponent  implements OnInit {
         this.hasDates = false;
       }
     );
+
+    this.dateService.clickOnDate$.subscribe(click => {
+      if(click)
+        this.presentToast('bottom', "Votre date n'a pas encore répondu.");
+    })
   }
 
   setActivePage(tab: string) {
     this.activePage = tab;
+  }
+
+  async presentToast(position: 'top' | 'middle' | 'bottom', msg: string) {
+    const toast = await this.toastController.create({
+      message: msg,
+      duration: 1500,
+      position: position,
+    });
+
+    await toast.present();
   }
 
 }

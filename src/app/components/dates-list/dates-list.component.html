@@ -1,3 +1,11 @@
-<p>
-  dates-list works!
-</p>
+<div class="dateContainer">
+  <div class="dateTextContainer">
+    <p class="dateText">Mes dates :</p>
+  </div>
+
+  <div class="card-container">
+    <app-card-list *ngFor="let card of dates" [isLocked]="card.isLocked" [img]="card.img" [dateWith]="card.dateWith">
+    </app-card-list>
+  </div>
+  
+</div>
