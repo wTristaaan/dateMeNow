@@ -3,18 +3,5 @@
     <img src="assets/logo/logo.png" alt="DateMe - Now Logo" class="logo" [ngClass]="{'logoSize': showLoginDiv}" />
   </div>
 
-  <div *ngIf="showLoginDiv" class="login-div">
-    <div class="col-login"  align="center">
-      <p class="subtitle sublogin">Inscription / Connexion</p>
-      <div class="divider" [ngClass]="{'dividerAnimate': showLoginDiv}"></div>
-      <button class="icon-button marginMaxTop">
-        <ion-icon name="person-outline" class="icon"></ion-icon>
-        <span class="text">E-mail/Téléphone</span>
-      </button>
-      <button class="icon-button marginMinTop">
-        <img src="assets/logo/google.png" alt="Logo de google" class="icon" />
-        <span class="text">Continuer avec Google</span>
-      </button>
-    </div>
-  </div>
+  <ng-container *ngComponentOutlet="dynamicComponent"></ng-container>
 </ion-content>

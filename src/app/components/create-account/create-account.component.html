@@ -1,0 +1,25 @@
+<div class="login-div">
+  <div class="col-login" align="center">
+    <button class="choiceBtn" [ngClass]="{'active': activeTab === 'phone'}" (click)="setActiveTab('phone')">
+      <span>Téléphone</span>
+    </button>
+    <button class="choiceBtn" [ngClass]="{'active': activeTab === 'email'}" (click)="setActiveTab('email')">
+      <span>E-mail</span>
+    </button>
+
+    <div class="container-tail">
+      <div *ngIf="activeTab === 'phone'">
+        <input class="inputAccount" placeholder="Numéro de téléphone" type="tel" inputmode="numeric" [(ngModel)]="phoneNumber">
+        <button class="createAccountBtn" (click)="onCreateTelAccount()">
+          <span>Créer un compte</span>
+        </button>
+      </div>
+    <div *ngIf="activeTab === 'email'">
+      <input class="inputAccount" placeholder="Adresse e-mail" type="email" [(ngModel)]="email">
+      <button class="createAccountBtn" (click)="onCreateEmailAccount()">
+          <span>Créer un compte</span>
+        </button>
+    </div>
+    </div>
+  </div>
+</div>

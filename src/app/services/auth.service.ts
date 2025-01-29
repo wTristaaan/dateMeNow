@@ -21,7 +21,7 @@ export class AuthService implements CanActivate {
   login(): void {
     localStorage.setItem('auth-token', 'fake-token');
     this.isLoggedInSubject.next(true);
-    this.router.navigate(['/home']);
+    this.router.navigate(['/index']);
   }
 
   logout(): void {
@@ -33,7 +33,8 @@ export class AuthService implements CanActivate {
   canActivate(): boolean {
     const isLoggedIn = this.checkLoginStatus();
     if (!isLoggedIn) {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/home']);
+      return isLoggedIn;
     }
     return isLoggedIn;
   }

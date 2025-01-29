@@ -1,0 +1,106 @@
+.login-div {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  animation: slideUp 0.5s ease-out;
+}
+  
+  
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+  
+  .col-login{
+    height: 45vh;
+  }
+
+.divider{
+  background: var(--ion-color-secondary);
+  height: 3px;
+  margin: 12px;
+}
+
+.sublogin{
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 20px;
+}
+  
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: white;
+  color: var(--ion-color-primary);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 80%;
+}
+
+.icon-button:hover {
+  background-color: var(--ion-color-primary);
+  color: white;
+}
+  
+.icon {
+  width: 25px;
+  margin-right: 10px;
+  font-size: 25px;
+}
+
+.text {
+  flex-grow: 1;
+  text-align: center;
+  font-family: Poppins body;
+  font-size: 15px;
+}
+
+.marginMaxTop{
+  margin-top: 30px;
+}
+  
+.marginMinTop{
+  margin-top: 10px;
+}
+
+.logoSize{
+  animation: logoSizeAnimation 0.5s ease-out;
+  animation-fill-mode: forwards
+}
+
+@keyframes logoSizeAnimation {
+  from {
+    width: 100px;
+  }
+  to {
+    width: 130px;
+  }
+}
+  
+.dividerAnimate{
+  animation: dividerAnimation 0.5s ease-out;
+  animation-fill-mode: forwards
+}
+
+@keyframes dividerAnimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  }
+}

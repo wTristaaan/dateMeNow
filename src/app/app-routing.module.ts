@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthService } from './services/auth.service';
+import { IndexComponent } from './components/index/index.component';
 
 const routes: Routes = [
   {
@@ -11,6 +13,11 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'index',
+    canActivate: [AuthService],
+    component: IndexComponent,
+  }
 ];
 
 @NgModule({
