@@ -8,6 +8,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { AuthFormComponent } from '../components/auth-form/auth-form.component';
 import { CreateAccountComponent } from '../components/create-account/create-account.component';
+import { IndexComponent } from '../components/index/index.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,11 @@ import { CreateAccountComponent } from '../components/create-account/create-acco
     IonicModule.forRoot(),
     HomePageRoutingModule,
   ],
-  declarations: [HomePage, AuthFormComponent, CreateAccountComponent]
+  declarations: [
+    HomePage, 
+    AuthFormComponent, 
+    CreateAccountComponent,
+    IndexComponent
+  ]
 })
 export class HomePageModule {}

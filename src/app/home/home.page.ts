@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ToastController } from '@ionic/angular/standalone';
 import { AuthFormComponent } from '../components/auth-form/auth-form.component';
 import { ComponentsService } from '../services/components.service';
 import { CreateAccountComponent } from '../components/create-account/create-account.component';
@@ -16,7 +15,6 @@ export class HomePage {
   dynamicComponent: any;
 
   constructor(
-    private toastController: ToastController,
     private componentsService: ComponentsService
   ) { }
 

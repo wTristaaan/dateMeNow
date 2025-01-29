@@ -1,5 +1,17 @@
-<p>
-  index works!
-</p>
+<ion-content [fullscreen]="true" class="login-page">
+  <ng-container *ngComponentOutlet="dynamicComponent"></ng-container>
+  
+  <div class="nav-container"> 
+    <div class="icon-container" (click)="setActivePage('home')">
+      <ion-icon class="iconSize" [ngClass]="{'active': activePage === 'home'}" name="home-outline"></ion-icon>
+    </div>
+    <div class="icon-container" (click)="setActivePage('heart')">
+      <ion-icon class="iconSize" [ngClass]="{'active': activePage === 'heart'}" name="heart-outline"></ion-icon>
+    </div>
+    <div class="icon-container" (click)="setActivePage('profil')">
+      <ion-icon class="iconSize" [ngClass]="{'active': activePage === 'profil'}" name="person-outline"></ion-icon>
+    </div>
+  </div>
+</ion-content>
 
-<button (click)="logout()">Déconnexion</button>
+<!-- <button (click)="logout()">Déconnexion</button> -->
