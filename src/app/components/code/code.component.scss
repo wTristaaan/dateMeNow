@@ -1,0 +1,82 @@
+.login-div {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    animation: slideUp 0.5s ease-out;
+  }
+
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+.col-login{
+    height: 45vh;
+}
+
+.divider{
+    background: var(--ion-color-secondary);
+    height: 3px;
+    margin: 12px;
+}
+
+.dividerAnimate{
+    animation: dividerAnimation 0.5s ease-out;
+    animation-fill-mode: forwards
+}
+  
+@keyframes dividerAnimation {
+    from {
+        width: 0;
+    }
+    to {
+        width: 80%;
+    }
+}
+
+.sublogin{
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 20px;
+}
+
+.otp-input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    margin-right: 5px;
+    background: var(--ion-color-primary);
+    color: white;
+    font-family: 'Poppins body';
+}
+  
+.otp-input:focus {
+    border: solid 3px var(--ion-color-secondary) !important;
+    outline: none;
+}
+
+.createAccountBtn{
+    margin-top: 20px;
+    background: var(--ion-color-secondary);
+    color: #FFFFFF;
+    padding: 10px 20px;
+    font-family: Poppins headline;
+    width: 50%;
+    border: 0;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+}

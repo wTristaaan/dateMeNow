@@ -65,8 +65,18 @@ export class CreateAccountComponent  implements OnInit {
     }
 
     if(method == "email"){
-  this.createAccountService.createEmailAccount(this.email)      
+      this.createAccountService.createEmailAccount(this.email)      
     }
+  }
+
+  onFocus() {
+    const div = document.querySelector('.login-div') as HTMLElement;
+    div.style.position = "relative"
+  }
+
+  onBlur(){
+    const div = document.querySelector('.login-div') as HTMLElement;
+    div.style.position = "absolute"
   }
 
 }

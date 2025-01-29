@@ -9,13 +9,13 @@
 
     <div class="container-tail">
       <div *ngIf="activeTab === 'phone'">
-        <input class="inputAccount" placeholder="Numéro de téléphone" type="tel" inputmode="numeric" [(ngModel)]="phoneNumber">
+        <input class="inputAccount" placeholder="Numéro de téléphone" type="tel" inputmode="numeric" [(ngModel)]="phoneNumber" (focus)="onFocus()" (blur)="onBlur()">
         <button class="createAccountBtn" (click)="onCreateTelAccount()">
           <span>Créer un compte</span>
         </button>
       </div>
     <div *ngIf="activeTab === 'email'">
-      <input class="inputAccount" placeholder="Adresse e-mail" type="email" [(ngModel)]="email">
+      <input class="inputAccount" placeholder="Adresse e-mail" type="email" [(ngModel)]="email" (focus)="onFocus()" (blur)="onBlur()">
       <button class="createAccountBtn" (click)="onCreateEmailAccount()">
           <span>Créer un compte</span>
         </button>

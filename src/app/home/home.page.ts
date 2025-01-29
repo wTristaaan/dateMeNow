@@ -3,6 +3,7 @@ import { ToastController } from '@ionic/angular/standalone';
 import { AuthFormComponent } from '../components/auth-form/auth-form.component';
 import { ComponentsService } from '../services/components.service';
 import { CreateAccountComponent } from '../components/create-account/create-account.component';
+import { CodeComponent } from '../components/code/code.component';
 
 @Component({
   selector: 'app-home',
@@ -28,6 +29,8 @@ export class HomePage {
     this.componentsService.data$.subscribe(newData => {
       if(newData == "changeComponent")
         this.dynamicComponent = CreateAccountComponent
+      if(newData == "codeComponent")
+        this.dynamicComponent = CodeComponent
     });
   }
 

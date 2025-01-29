@@ -25,9 +25,9 @@ export class AuthService implements CanActivate {
   }
 
   logout(): void {
-    localStorage.removeItem('token');
+    localStorage.removeItem('auth-token');
     this.isLoggedInSubject.next(false);
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
   }
 
   canActivate(): boolean {
