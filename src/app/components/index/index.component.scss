@@ -3,10 +3,11 @@
     height: 10vh;
     position: fixed;
     bottom: 0;
-    border-radius: 20px 20px 0 0;
+    border-radius: 10px 10px 10px 10px;
     border: solid 3px white;
     display: flex;
     justify-content: center;
+    background: var(--ion-color-primary);
 }
 
 .icon-container{

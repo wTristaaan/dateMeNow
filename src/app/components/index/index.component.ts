@@ -4,6 +4,7 @@ import { DateService } from 'src/app/services/dates.service';
 import { NoDatesComponent } from '../no-dates/no-dates.component';
 import { DatesListComponent } from '../dates-list/dates-list.component';
 import { ToastController } from '@ionic/angular';
+import { HeartComponent } from '../heart/heart.component';
 
 @Component({
   selector: 'app-index',
@@ -55,6 +56,21 @@ export class IndexComponent  implements OnInit {
 
   setActivePage(tab: string) {
     this.activePage = tab;
+    if(tab == "home")
+    {
+      if(this.hasDates)
+        {
+          this.dateService.sendDates(this.dates)
+          this.dynamicComponent = DatesListComponent
+        }else{
+          this.dynamicComponent = NoDatesComponent
+        }
+    }
+
+    if(tab == "heart")  
+      this.dynamicComponent = HeartComponent
+
+      
   }
 
   async presentToast(position: 'top' | 'middle' | 'bottom', msg: string) {

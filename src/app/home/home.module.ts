@@ -11,6 +11,8 @@ import { CreateAccountComponent } from '../components/create-account/create-acco
 import { IndexComponent } from '../components/index/index.component';
 import { DatesListComponent } from '../components/dates-list/dates-list.component';
 import { CardListComponent } from '../components/card-list/card-list.component';
+import { HeartComponent } from '../components/heart/heart.component';
+import { SwipeableCardComponent } from '../components/swipeable-card/swipeable-card.component';
 
 @NgModule({
   imports: [
@@ -25,7 +27,9 @@ import { CardListComponent } from '../components/card-list/card-list.component';
     CreateAccountComponent,
     IndexComponent,
     DatesListComponent,
-    CardListComponent
+    CardListComponent,
+    HeartComponent,
+    SwipeableCardComponent,
   ]
 })
 export class HomePageModule {}
