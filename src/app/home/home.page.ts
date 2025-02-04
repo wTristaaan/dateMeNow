@@ -3,6 +3,7 @@ import { AuthFormComponent } from '../components/auth-form/auth-form.component';
 import { ComponentsService } from '../services/components.service';
 import { CreateAccountComponent } from '../components/create-account/create-account.component';
 import { CodeComponent } from '../components/code/code.component';
+import { EndChoiceComponent } from '../components/end-choice/end-choice.component';
 
 @Component({
   selector: 'app-home',

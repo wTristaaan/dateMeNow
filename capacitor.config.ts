@@ -12,6 +12,9 @@ const config: CapacitorConfig = {
       splashFullScreen: true,
       useDialog: false,
     },
+    Contacts: {
+      presentationOptions: ["email", "phone"]
+    }
   },
 };
 

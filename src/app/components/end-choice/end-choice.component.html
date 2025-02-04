@@ -1,0 +1,19 @@
+<div class="endChoiceContainer">
+  <div>
+    <p class="textEndChoice">Avec qui partagerez vous ce date ?</p>
+  </div>
+
+  <div class="marginTop">
+    <input class="inputEnChoice" placeholder="Nom de votre date" [(ngModel)]="dateName">
+  </div>
+
+  <div class="marginTop shareContainer">
+    <ion-icon name="share-outline" class="shareIcon"></ion-icon>
+    <p class="littleTextEndChoice">Partager le lien avec mon date</p>
+  </div>
+
+  <div class="marginTop contactContainer">
+    <p class="contactText">Partager avec un contact :</p>
+    <app-contact-list [contacts]="contacts"></app-contact-list>
+  </div>
+</div>

@@ -5,6 +5,8 @@ import { NoDatesComponent } from '../no-dates/no-dates.component';
 import { DatesListComponent } from '../dates-list/dates-list.component';
 import { ToastController } from '@ionic/angular';
 import { HeartComponent } from '../heart/heart.component';
+import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-index',
@@ -17,11 +19,13 @@ export class IndexComponent  implements OnInit {
   hasDates: boolean = false;
   dynamicComponent: any;
   activePage: string = 'home'
+  user: User | undefined
 
   constructor(
     private authService: AuthService,
     private dateService: DateService,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private userService: UserService
   ) {}
 
   logout() {
@@ -29,6 +33,7 @@ export class IndexComponent  implements OnInit {
   }
 
   ngOnInit() {
+    this.getUser()
     this.dateService.getDates().subscribe(
       (data) => {
         this.dates = data;
@@ -81,6 +86,11 @@ export class IndexComponent  implements OnInit {
     });
 
     await toast.present();
+  }
+
+  getUser(){
+    this.user = this.userService.getUser();
+    this.presentToast("top", `Bonjour ${this.user?.name}.`)
   }
 
 }

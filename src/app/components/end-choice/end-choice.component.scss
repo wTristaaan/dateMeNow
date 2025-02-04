@@ -1,0 +1,61 @@
+.endChoiceContainer{
+    height: 80vh;
+    margin-top: 100px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.textEndChoice{
+    font-family: Poppins subhead;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+.marginTop{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.inputEnChoice {
+    background-color: #FFFFFF;
+    width: 80%;
+    border-radius: 8px;
+    font-family: 'Poppins body';
+    text-align: left;
+    padding: 10px;
+}
+
+.inputEnChoice:focus {
+    border: solid 3px var(--ion-color-secondary) !important;
+    outline: none; 
+}
+
+.shareContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shareIcon{
+    color: white;
+    font-size: 30px;
+    margin-right: 2%;
+}
+
+.littleTextEndChoice{
+    color: white;
+    font-family: "Popppins body", sans-serif;
+}
+
+.contactContainer{
+    height: 20vh;
+    display: block;
+}
+
+.contactText{
+    color: white;
+    text-align: left;
+    font-family: "Popppins body", sans-serif;
+}

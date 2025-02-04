@@ -1,2 +1,7 @@
-
-<app-swipeable-card [cards]="cards" (choiceMade)="logChoice($event)"></app-swipeable-card>
+<ng-container *ngIf="shouldShowSwipeableCard; else alternativeComponent">
+    <app-swipeable-card [cards]="cards" (choiceMade)="logChoice($event)"></app-swipeable-card>
+</ng-container>
+  
+<ng-template #alternativeComponent>
+    <app-end-choice [contacts]="contacts"></app-end-choice>
+</ng-template>

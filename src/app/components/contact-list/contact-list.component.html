@@ -1,0 +1,4 @@
+<div class="divContactContainer" *ngFor="let contact of contacts">
+  <img class="imgContact" [src]="contact?.image?.base64String" alt="Image du contact">
+  <p class="textContact">{{ contact?.name?.given }} {{ contact?.name?.family }}</p>
+</div>

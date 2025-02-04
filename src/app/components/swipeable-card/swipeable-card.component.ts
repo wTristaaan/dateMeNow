@@ -68,91 +68,90 @@ export class SwipeableCardComponent  implements OnInit {
     return true
   } */
 
-  handlePan(event: any) {
-    if (
-      event.deltaX === 0 ||
-      (event.center.x === 0 && event.center.y === 0) ||
-      !this.cards!.length
-    )
-      return;
-
-    if (this.transitionInProgress) {
-      this.handleShift();
-    }
-
-    this.renderer.addClass(this.appCardsArray![0].nativeElement, 'moving');
-
-    if (event.deltaX > 0) {
-      this.toggleChoiceIndicator(false, true);
-    }
-    if (event.deltaX < 0) {
-      this.toggleChoiceIndicator(true, false);
-    }
-
-    let xMulti = event.deltaX * 0.03;
-    let yMulti = event.deltaY / 80;
-    let rotate = xMulti * yMulti;
-
-    this.renderer.setStyle(
-      this.appCardsArray![0].nativeElement,
-      'transform',
-      'translate(' +
-        event.deltaX +
-        'px, ' +
-        event.deltaY +
-        'px) rotate(' +
-        rotate +
-        'deg)'
-    );
-
-    this.shiftRequired = true;
-  }
-
-  handlePanEnd(event: any) {
-    this.toggleChoiceIndicator(false, false);
-
-    if (!this.cards!.length) return;
-
-    this.renderer.removeClass(this.appCardsArray![0].nativeElement, 'moving');
-
-    let keep = Math.abs(event.deltaX) < 80 || Math.abs(event.velocityX) < 0.5;
-    if (keep) {
-      this.renderer.setStyle(
-        this.appCardsArray![0].nativeElement,
-        'transform',
-        ''
-      );
-      this.shiftRequired = false;
-    } else {
-      let endX = Math.max(
-        Math.abs(event.velocityX) * this.moveOutWidth!,
-        this.moveOutWidth!
-      );
-      let toX = event.deltaX > 0 ? endX : -endX;
-      let endY = Math.abs(event.velocityY) * this.moveOutWidth!;
-      let toY = event.deltaY > 0 ? endY : -endY;
+    handlePan(event: any) {
+      if (
+        event.deltaX === 0 ||
+        (event.center.x === 0 && event.center.y === 0) ||
+        !this.cards!.length ||
+        this.transitionInProgress
+      )
+        return;
+    
+      this.renderer.addClass(this.appCardsArray![0].nativeElement, 'moving');
+    
+      if (event.deltaX > 0) {
+        this.toggleChoiceIndicator(false, true);
+      }
+      if (event.deltaX < 0) {
+        this.toggleChoiceIndicator(true, false);
+      }
+    
       let xMulti = event.deltaX * 0.03;
       let yMulti = event.deltaY / 80;
       let rotate = xMulti * yMulti;
-
+    
       this.renderer.setStyle(
         this.appCardsArray![0].nativeElement,
         'transform',
         'translate(' +
-          toX +
+          event.deltaX +
           'px, ' +
-          (toY + event.deltaY) +
+          event.deltaY +
           'px) rotate(' +
           rotate +
           'deg)'
       );
-
+    
       this.shiftRequired = true;
-
-      this.emitChoice(!!(event.deltaX > 0), this.cards![0]);
     }
-    this.transitionInProgress = true;
-  }
+    
+
+    handlePanEnd(event: any) {
+      this.toggleChoiceIndicator(false, false);
+    
+      if (!this.cards!.length || this.transitionInProgress) return;
+    
+      this.renderer.removeClass(this.appCardsArray![0].nativeElement, 'moving');
+    
+      let keep = Math.abs(event.deltaX) < 80 || Math.abs(event.velocityX) < 0.5;
+      if (keep) {
+        this.renderer.setStyle(
+          this.appCardsArray![0].nativeElement,
+          'transform',
+          ''
+        );
+        this.shiftRequired = false;
+      } else {
+        let endX = Math.max(
+          Math.abs(event.velocityX) * this.moveOutWidth!,
+          this.moveOutWidth!
+        );
+        let toX = event.deltaX > 0 ? endX : -endX;
+        let endY = Math.abs(event.velocityY) * this.moveOutWidth!;
+        let toY = event.deltaY > 0 ? endY : -endY;
+        let xMulti = event.deltaX * 0.05;
+        let yMulti = event.deltaY / 80;
+        let rotate = xMulti * yMulti;
+    
+        this.renderer.setStyle(
+          this.appCardsArray![0].nativeElement,
+          'transform',
+          'translate(' +
+            toX +
+            'px, ' +
+            (toY + event.deltaY) +
+            'px) rotate(' +
+            rotate +
+            'deg)'
+        );
+    
+        this.shiftRequired = true;
+    
+        this.emitChoice(!!(event.deltaX > 0), this.cards![0]);
+      }
+      this.transitionInProgress = true;
+    }
+    
 
   toggleChoiceIndicator(cross:  any, heart:  any) {
     this.crossVisible = cross;
@@ -164,9 +163,12 @@ export class SwipeableCardComponent  implements OnInit {
     this.toggleChoiceIndicator(false, false);
     if (this.shiftRequired) {
       this.shiftRequired = false;
-      this.cards!.shift();
+      setTimeout(() => {
+        this.cards!.shift();
+      }, 50);
     }
   }
+  
 
   emitChoice(heart:any, card:any) {
     this.choiceMade.emit({
@@ -176,16 +178,16 @@ export class SwipeableCardComponent  implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.moveOutWidth = document.documentElement.clientWidth * 1.5;
+    this.moveOutWidth = document.documentElement.clientWidth * 1.7;
     this.appCardsArray = this.appCards!.toArray();
-    console.log('=======>', JSON.parse(JSON.stringify(this.appCards)));
     this.appCards!.changes.subscribe(() => {
       this.appCardsArray = this.appCards!.toArray();
-      console.log(
-        '=======>',
-        JSON.parse(JSON.stringify(this.appCardsArray))
-      );
     });
+
+    setTimeout(() => {
+      console.log(this.cards)
+      console.log(this.cards?.length)
+    }, 3000);
   }
 
   async openInfoModal() {

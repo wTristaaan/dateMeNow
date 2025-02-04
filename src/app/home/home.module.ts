@@ -13,6 +13,8 @@ import { DatesListComponent } from '../components/dates-list/dates-list.componen
 import { CardListComponent } from '../components/card-list/card-list.component';
 import { HeartComponent } from '../components/heart/heart.component';
 import { SwipeableCardComponent } from '../components/swipeable-card/swipeable-card.component';
+import { EndChoiceComponent } from '../components/end-choice/end-choice.component';
+import { ContactListComponent } from '../components/contact-list/contact-list.component';
 
 @NgModule({
   imports: [
@@ -30,6 +32,8 @@ import { SwipeableCardComponent } from '../components/swipeable-card/swipeable-c
     CardListComponent,
     HeartComponent,
     SwipeableCardComponent,
+    EndChoiceComponent,
+    ContactListComponent
   ]
 })
 export class HomePageModule {}
