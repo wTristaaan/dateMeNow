@@ -15,6 +15,7 @@ import { HeartComponent } from '../components/heart/heart.component';
 import { SwipeableCardComponent } from '../components/swipeable-card/swipeable-card.component';
 import { EndChoiceComponent } from '../components/end-choice/end-choice.component';
 import { ContactListComponent } from '../components/contact-list/contact-list.component';
+import { UserProfilComponent } from '../components/user-profil/user-profil.component';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import { ContactListComponent } from '../components/contact-list/contact-list.co
     HeartComponent,
     SwipeableCardComponent,
     EndChoiceComponent,
-    ContactListComponent
+    ContactListComponent,
+    UserProfilComponent
   ]
 })
 export class HomePageModule {}

@@ -1,0 +1,68 @@
+.userProfilContainer {
+    margin-inline: 25px;
+    margin-top: 50px;
+    box-sizing: border-box;
+    height: 83vh;
+    border: solid 10px var(--ion-color-primary);
+    position: relative;
+}
+
+
+.iconContainer{
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.info-icon{
+    float: right;
+    font-size: 30px;
+    color: white;
+}
+
+.imgContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2%;
+    margin-top: 50px;
+}
+
+.textModif{
+    color: white;
+    font-family: Poppins body;
+    font-size: 14px;
+    opacity: 0.5;
+    margin: 0;
+}
+
+.inputContainer{
+    margin-top: 50px;
+    margin-bottom: 2%;
+}
+
+.inputProfil {
+    background-color: #FFFFFF;
+    width: 80%;
+    border-radius: 8px;
+    font-family: 'Poppins body';
+    text-align: left;
+    padding: 10px;
+}
+
+.inputProfil:focus {
+    border: solid 3px var(--ion-color-secondary) !important;
+    outline: none; 
+}
+
+.modfifContainer2{
+    margin-right: 45px;
+    text-align: right;
+}
+
+.bottomText {
+    border: solid 10px var(--ion-color-primary);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

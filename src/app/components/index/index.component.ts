@@ -7,6 +7,7 @@ import { ToastController } from '@ionic/angular';
 import { HeartComponent } from '../heart/heart.component';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user';
+import { UserProfilComponent } from '../user-profil/user-profil.component';
 
 @Component({
   selector: 'app-index',
@@ -75,7 +76,8 @@ export class IndexComponent  implements OnInit {
     if(tab == "heart")  
       this.dynamicComponent = HeartComponent
 
-      
+    if(tab == "profil")  
+      this.dynamicComponent = UserProfilComponent
   }
 
   async presentToast(position: 'top' | 'middle' | 'bottom', msg: string) {
