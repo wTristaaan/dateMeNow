@@ -4,6 +4,7 @@ import { HomePage } from './home.page';
 import { AuthService } from '../services/auth.service';
 import { IndexComponent } from '../components/index/index.component';
 import { GuestGuard } from '../guard/auth.guard';
+import { CreditsComponent } from '../components/credits/credits.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,11 @@ const routes: Routes = [
     path: 'index',
     canActivate: [AuthService],
     component: IndexComponent,
+  },
+  {
+    path: 'credits',
+    canActivate: [AuthService],
+    component: CreditsComponent,
   }
 ];
 

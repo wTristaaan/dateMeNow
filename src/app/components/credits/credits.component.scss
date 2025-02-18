@@ -1,0 +1,31 @@
+ion-toolbar {
+    --background: transparent;
+    --color: white;
+    margin: 20px;
+    font-size: xx-large;
+    width: 90%;
+}
+
+.credits-container{
+    height: 75vh;
+    margin: 50px;
+}
+
+.credits-title{
+    height: 10vh;
+}
+
+.credits-title-text{
+    font-family: Poppins subhead;
+    font-size: 20px;
+    color: white;
+    position: relative;
+    top: 20%;
+    text-decoration: underline;
+}
+
+.credits-body-text{
+    font-family: Poppins body;
+    font-size: 14px;
+    color: white;
+}

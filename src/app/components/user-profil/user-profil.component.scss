@@ -19,6 +19,12 @@
     color: white;
 }
 
+.info-icon:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+
 .imgContainer{
     width: 100%;
     display: flex;
