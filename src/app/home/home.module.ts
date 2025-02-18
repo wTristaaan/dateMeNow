@@ -17,6 +17,7 @@ import { EndChoiceComponent } from '../components/end-choice/end-choice.componen
 import { ContactListComponent } from '../components/contact-list/contact-list.component';
 import { UserProfilComponent } from '../components/user-profil/user-profil.component';
 import { CreditsComponent } from '../components/credits/credits.component';
+import { CguComponent } from '../components/cgu/cgu.component';
 
 @NgModule({
   imports: [
@@ -37,7 +38,8 @@ import { CreditsComponent } from '../components/credits/credits.component';
     EndChoiceComponent,
     ContactListComponent,
     UserProfilComponent,
-    CreditsComponent
+    CreditsComponent,
+    CguComponent
   ]
 })
 export class HomePageModule {}

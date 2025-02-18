@@ -1,6 +1,6 @@
 <div class="userProfilContainer">
   <div class="iconContainer">
-    <ion-icon (click)="navigateToCredits()" class="info-icon" name="information-circle-outline"></ion-icon>
+    <ion-icon (click)="navigateTo('credits')" class="info-icon" name="information-circle-outline"></ion-icon>
   </div>
 
   <div class="imgContainer">
@@ -19,7 +19,7 @@
     <p class="textModif">Modifier</p>
   </div>
 
-  <div class="bottomText">
+  <div class="bottomText"  (click)="navigateTo('cgu')">
     <p class="textModif" align="center">CGU</p>
   </div>  
 </div>

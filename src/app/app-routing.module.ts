@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { IndexComponent } from './components/index/index.component';
 import { CreditsComponent } from './components/credits/credits.component';
+import { CguComponent } from './components/cgu/cgu.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,11 @@ const routes: Routes = [
     path: 'credits',
     canActivate: [AuthService],
     component: CreditsComponent,
+  },
+  {
+    path: 'cgu',
+    canActivate: [AuthService],
+    component: CguComponent,
   }
 ];
 

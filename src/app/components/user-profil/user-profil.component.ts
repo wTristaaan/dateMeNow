@@ -23,8 +23,8 @@ export class UserProfilComponent  implements OnInit {
     this.username = this.user!.name
   }
 
-  navigateToCredits() {
-    this.router.navigate(['/credits']);
+  navigateTo(path: string) {
+    this.router.navigate(['/' + path]);
   }
 
 }

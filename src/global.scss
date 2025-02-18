@@ -44,3 +44,11 @@
     --background: var(--ion-color-primary);
     height: 100vh;
 }
+
+ion-toolbar {
+    --background: transparent;
+    --color: white;
+    margin: 20px;
+    font-size: xx-large;
+    width: 90%;
+  }
