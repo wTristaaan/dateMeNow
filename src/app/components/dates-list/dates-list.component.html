@@ -4,7 +4,7 @@
   </div>
 
   <div class="card-container">
-    <app-card-list *ngFor="let card of dates" [isLocked]="card.isLocked" [img]="card.img" [dateWith]="card.dateWith">
+    <app-card-list *ngFor="let card of dates" [isLocked]="card.isLocked" [img]="card.img" [dateWith]="card.dateWith" [cardId]="card.id" [view]="card.view" [bestActivity]="card.bestActivity" [activities]="card.activities">
     </app-card-list>
   </div>
   

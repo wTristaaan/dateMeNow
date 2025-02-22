@@ -18,6 +18,7 @@ import { ContactListComponent } from '../components/contact-list/contact-list.co
 import { UserProfilComponent } from '../components/user-profil/user-profil.component';
 import { CreditsComponent } from '../components/credits/credits.component';
 import { CguComponent } from '../components/cgu/cgu.component';
+import { TargetCardComponent } from '../components/target-card/target-card.component';
 
 @NgModule({
   imports: [
@@ -39,7 +40,8 @@ import { CguComponent } from '../components/cgu/cgu.component';
     ContactListComponent,
     UserProfilComponent,
     CreditsComponent,
-    CguComponent
+    CguComponent,
+    TargetCardComponent
   ]
 })
 export class HomePageModule {}

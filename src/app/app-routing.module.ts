@@ -4,6 +4,7 @@ import { AuthService } from './services/auth.service';
 import { IndexComponent } from './components/index/index.component';
 import { CreditsComponent } from './components/credits/credits.component';
 import { CguComponent } from './components/cgu/cgu.component';
+import { TargetCardComponent } from './components/target-card/target-card.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,11 @@ const routes: Routes = [
     path: 'cgu',
     canActivate: [AuthService],
     component: CguComponent,
+  },
+  {
+    path: 'target-component/:id/:view/:bestActivity/:activities',
+    canActivate: [AuthService],
+    component: TargetCardComponent,
   }
 ];
 

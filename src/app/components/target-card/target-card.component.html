@@ -1,0 +1,32 @@
+<ion-content [fullscreen]="true" class="login-page">
+  <ion-toolbar>
+    <ion-icon (click)="navigateToIndex()" name="arrow-back-outline"></ion-icon>
+  </ion-toolbar> 
+
+  <div class="target-card-container" *ngIf="showFireworks">
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+  </div>
+
+  <div class="card-container image-container" *ngIf="showCard">
+    <img [src]="'https://picsum.photos/id/' + bestActivity + '/200/300'" alt="Dynamic Image">
+    <div class="icon-container">
+      <ion-icon name="remove-outline" class="left-icon"></ion-icon>
+      <ion-icon name="add-outline" class="right-icon"></ion-icon>
+    </div>
+  </div>
+  
+
+  <div class="activities-container" *ngIf="showCard">
+    <div *ngFor="let card of activities; let i = index" class="activity-card">
+      <div class="name-container" align="center">{{ card }}</div>
+      <div align="center" style="width: 50%; margin-top: 9%">
+        <div class="toggleWrapper">
+          <input type="checkbox" [id]="'toggle' + i" [name]="'toggle' + i" class="mobileToggle" checked>
+          <label [for]="'toggle' + i"></label>
+        </div>
+      </div>
+    </div>
+  </div>  
+</ion-content>

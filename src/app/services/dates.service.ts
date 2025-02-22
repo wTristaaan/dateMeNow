@@ -17,18 +17,18 @@ export class DateService {
 
   getDates(): Observable<any> {
     return of([
-      { img: 'https://placehold.co/600x400', dateWith: 'Mon chéri ❤️', isLocked: false },
-      { img: 'https://placehold.co/600x400', dateWith: 'Théa', isLocked: true },
-      { img: 'https://placehold.co/600x400', dateWith: 'Mon chéri ❤️', isLocked: false },
-      { img: 'https://placehold.co/600x400', dateWith: 'Théa', isLocked: true },
-      { img: 'https://placehold.co/600x400', dateWith: 'Mon chéri ❤️', isLocked: false },
-      { img: 'https://placehold.co/600x400', dateWith: 'Théa', isLocked: true },
-      { img: 'https://placehold.co/600x400', dateWith: 'Mon chéri ❤️', isLocked: false },
-      { img: 'https://placehold.co/600x400', dateWith: 'Théa', isLocked: true },
-      { img: 'https://placehold.co/600x400', dateWith: 'Mon chéri ❤️', isLocked: false },
-      { img: 'https://placehold.co/600x400', dateWith: 'Théa', isLocked: true },
-      { img: 'https://placehold.co/600x400', dateWith: 'Mon chéri ❤️', isLocked: false },
-      { img: 'https://placehold.co/600x400', dateWith: 'Théa', isLocked: true },
+      { id: "1", img: 'https://placehold.co/600x400', dateWith: 'Mon chéri ❤️', isLocked: false, view: false, bestActivity: "1", activities: ["1", "2", "2"] },
+      { id: "2", img: 'https://placehold.co/600x400', dateWith: 'Théa', isLocked: true, view: false, bestActivity: "2", activities: [] },
+      { id: "3", img: 'https://placehold.co/600x400', dateWith: 'Mon chéri ❤️', isLocked: false, view: true, bestActivity: "3", activities: [] },
+      { id: "4", img: 'https://placehold.co/600x400', dateWith: 'Théa', isLocked: true, view: false, bestActivity: "4", activities: [] },
+      { id: "5", img: 'https://placehold.co/600x400', dateWith: 'Mon chéri ❤️', isLocked: false, view: false, bestActivity: "1", activities: [] },
+      { id: "6", img: 'https://placehold.co/600x400', dateWith: 'Théa', isLocked: true, view: false, bestActivity: "5", activities: [] },
+      { id: "7", img: 'https://placehold.co/600x400', dateWith: 'Mon chéri ❤️', isLocked: false, view: false, bestActivity: "6", activities: [] },
+      { id: "8", img: 'https://placehold.co/600x400', dateWith: 'Théa', isLocked: true, view: false, bestActivity: "7", activities: [] },
+      { id: "9", img: 'https://placehold.co/600x400', dateWith: 'Mon chéri ❤️', isLocked: false, view: false, bestActivity: "8", activities: [] },
+      { id: "10", img: 'https://placehold.co/600x400', dateWith: 'Théa', isLocked: true, view: false, bestActivity: "9", activities: [] },
+      { id: "11", img: 'https://placehold.co/600x400', dateWith: 'Mon chéri ❤️', isLocked: false, view: false, bestActivity: "1", activities: [] },
+      { id: "12", img: 'https://placehold.co/600x400', dateWith: 'Théa', isLocked: true, view: false, bestActivity: "10", activities: [] },
     ]).pipe(delay(1000));
   }
 
